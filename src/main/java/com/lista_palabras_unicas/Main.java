@@ -32,6 +32,13 @@ public class Main {
             """;
             System.out.println(menu);
             System.out.print("Seleccione una opción: ");
+
+            while (!sc.hasNextInt()) {
+                System.err.println("Error: Debe Ingresar un numero.");
+                sc.next();
+                System.out.print("Seleccione una opción: ");
+
+            }
             opcion = sc.nextInt();
             sc.nextLine();
 
