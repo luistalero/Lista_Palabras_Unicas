@@ -6,20 +6,20 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("\nIngrese las palabras que desea añadir a la lista (escriba 'close' para terminar): ");
+        System.out.println("\nIngrese las palabras que desea añadir a la lista: ");
 
         TreeSet<String> palabras = new TreeSet<>();
-        while (true) {
+        boolean añadir;
+        do {
             System.out.print("Palabras: ");
             String palabra = sc.nextLine();
-
-            if (palabra.equalsIgnoreCase("close")) {
-                break;
-            }
-
             palabras.add(palabra);
-        }
 
+            System.out.println("¿Desea añadir otra palabra? (s/n): ");
+            String respuesta = sc.nextLine();
+            añadir = respuesta.equalsIgnoreCase("s");
+        } while (añadir);
+       
         int opcion;
         do {
             String menu = """
